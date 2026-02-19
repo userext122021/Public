@@ -1,43 +1,52 @@
-#Графика
+# Visual Design Document (VDD) — SHARDS v0.3
 
-##Общий шаблон промпта
+## 1. Общий стиль и направление
 
+Игра использует эстетику **ретро-футуризма 50-х годов**, вдохновленную *Fallout 1*, с техническими ограничениями, имитирующими старое оборудование.
 
-[POV/Camera], pixel art, 16-bit, Fallout 1 style, [Main Subject: objects/buildings], [Environmental Details: flora/debris/fluids], [Key Lighting/Atmosphere], [Color Palette: 2-3 main colors], sharp pixels, low fidelity, nostalgic and detailed atmosphere --width 512 --height 256
+*   **Графика:** Pixel art, low-poly, `16-bit` стиль с `sharp pixels`.
+*   **Атмосфера:** Детализированная, но с низкой точностью (`low fidelity`), ностальгическая.
+*   **Ключевой контраст:** Сочетание теплых, «грязных» палитр Пустоши с холодными, кислотными акцентами технологий «Золотого Века» и мутаций.
 
-**Палитры:**
-- **Toxic:** sickly green, dark teal, mustard yellow
-- **Sunset:** burnt orange, dusty ochre, rusted red
-- **Cold:** steel blue, cold slate grey, electric cyan
-- **Industrial:** dark charcoal, olive drab, oily black
+## 2. Цветовые палитры (Color Palettes)
 
-Теплые палитры (Fallout Classic Desert)
-**"Scorched Earth" (Классическая Пустошь)** dusty ochre, terracotta red, sun-bleached bone, deep sepia shadows
+Палитры подобраны для создания ощущения тепла, уюта и опасности.
 
-**"Golden Hour Decay" (Мягкий закат)**
-Цвета: amber glow, honey yellow, plum purple shadows, muted gold
-Настроение: Меланхолия, конец дня, затишье перед ночной бурей.
+### 2.1. Основные палитры мира (Теплые)
 
-**Rusty Hub" (Индустриальная медь)**
-Цвета: burnt orange, oxidized copper, warm brass, charcoal grey
-Настроение: Старое железо, торговые посты, запах мазута и раскаленного металла.
+Используются для большинства экстерьеров и природных зон.
 
-**Lighting Presets:**
-- **Radioactive:** eerie bioluminescence, glowing fog
-- **Harsh:** top-down sun, pitch black shadows
-- **Industrial:** flickering neon, stretching shadows
-- **Moonlight:** shafts through cracks, volumetric dust
+*   **"Scorched Earth" (Классическая Пустошь):** `dusty ochre, terracotta red, sun-bleached bone, deep sepia shadows`. Подчеркивает каждую трещину и ржавчину на объектах.
+*   **"Golden Hour Decay" (Мягкий закат):** `amber glow, honey yellow, plum purple shadows, muted gold`. Создает меланхоличное настроение, затишье перед ночной бурей.
+*   **"Rusty Hub" (Индустриальная медь):** `burnt orange, oxidized copper, warm brass, charcoal grey`. Ощущение старого железа, торговых постов, запаха мазута.
 
-**Теплое освещение и атмосфера**
+### 2.2. Акцентные палитры (Холодные и Токсичные)
 
-- **"Blinding Wasteland Sun" (Зенит)**
-  - Keywords: harsh overexposed sunlight, sharp black shadows, shimmering heat haze, thick dust particles
-  - Для чего: Чтобы подчеркнуть каждую трещину на куполе и ржавчину на машине.
+Используются для выделения опасных зон, технологий Альянса и зон мутации.
 
-- **"Sunset Silhouette" (Контурный свет)**
-  - Keywords: low-angle golden light, long stretching orange shadows, dust motes dancing in beams, silhouette of the dome frame
-  - Для чего: Создает драматичный объем, когда свет пробивается сквозь опоры купола.
+*   **Toxic:** `sickly green, dark teal, mustard yellow`. Идеально подходит для областей с высокой радиацией (Enthropy Zones).
+*   **Cold:** `steel blue, cold slate grey, electric cyan`. Применяется для технологий Альянса, роботов и зон с электричеством.
+*   **Industrial:** `dark charcoal, olive drab, oily black`. Для военных баз и закрытых помещений.
 
-- **"Emergency Incandescent" (Техногенное тепло)**
-  - Keywords: warm dim orange bulbs, flickering tungsten wire, local pools of light, dark brown corners
-  - Для чего: Освещение внутри домов или возле машины, создающее уют в опасном мире.
+## 3. Освещение и Атмосферные эффекты (Lighting Presets)
+
+Освещение используется для создания драматизма, контраста и тактической информации.
+
+*   **"Blinding Wasteland Sun" (Зенит):** `harsh overexposed sunlight, sharp black shadows, shimmering heat haze, thick dust particles`. Используется в полдень для создания напряжения.
+*   **"Sunset Silhouette" (Контурный свет):** `low-angle golden light, long stretching orange shadows, dust motes dancing in beams`. Создает драматический объем и длинные тени.
+*   **"Emergency Incandescent" (Техногенное тепло):** `warm dim orange bulbs, flickering tungsten wire, local pools of light, dark brown corners`. Используется внутри домов для создания ощущения уюта и безопасности в опасном мире.
+*   **Radioactive:** `eerie bioluminescence, glowing fog`. Используется для активных зон мутации и `Area` с радиационным уроном.
+
+## 4. Визуальные эффекты (VFX) для геймплея
+
+Эффекты должны быть читаемыми, несмотря на лоу-фай стиль.
+
+*   **Глитч-эффекты:** При приближении к сбойным технологиям «Золотого Века» или в зонах с высоким уровнем безумия (психический урон), применяются пост-процессинг эффекты в стиле **«цифрового сбоя»** (сдвиг RGB каналов, дизеринг).
+*   **Зоны Угрозы (Hazards):** Границы опасных зон (`Area`) должны быть четко видны с помощью **частиц** (густой дым, искры, радиоактивное свечение), использующих акцентные палитры из раздела 2.2.
+*   **UI:** Интерфейс стилизован под экраны старых ЭЛТ-мониторов, в монохромной теплой гамме, с эффектом легкого мерцания.
+
+---
+
+Надеюсь, этот VDD поможет задать правильный тон для твоих художников или для твоего личного видения при работе над ассетами.
+
+Хочешь ли теперь проработать **стартовые модели** для трех архетипов Миротворца (сила, интеллект, реакция) или перейдем к **дизайну первого уровня**?
