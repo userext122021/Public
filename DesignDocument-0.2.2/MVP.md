@@ -1,4 +1,4 @@
-# SHARDS: MVP Roadmap (v0.3 - Integrated Vision)
+# SHARDS: MVP Roadmap (v0.2.2 - Integrated Vision)
 
 ## 1. Required Features (MVP)
 
