@@ -1,4 +1,4 @@
-# SHARDS: Game Design Document (v0.3 - Integrated Vision)
+# SHARDS: Game Design Document (v0.2.2 - Integrated Vision)
 
 ## 1. High Concept & Core Loop
 **Название:** SHARDS (рабочее)
