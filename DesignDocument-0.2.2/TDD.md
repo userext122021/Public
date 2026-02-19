@@ -1,4 +1,4 @@
-# Technical Design Document (TDD) — SHARDS v0.3 (Integrated Vision)
+# Technical Design Document (TDD) — SHARDS v0.2.2 (Integrated Vision)
 
 ## 1. Архитектура игровых объектов (Компонентный подход)
 Вместо одного перегруженного скрипта логика делится на независимые узлы (Nodes). Это позволяет
